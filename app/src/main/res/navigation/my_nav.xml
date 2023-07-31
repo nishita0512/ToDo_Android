@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/tasksFragment">
+
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.example.todoapplication.fragments.TasksFragment"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" >
+        <action
+            android:id="@+id/action_tasksFragment_to_addTasksFragment"
+            app:destination="@id/addTasksFragment" />
+        <action
+            android:id="@+id/action_tasksFragment_to_editTasksFragment"
+            app:destination="@id/editTasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTasksFragment"
+        android:name="com.example.todoapplication.fragments.AddTasksFragment"
+        android:label="fragment_add_edit_tasks"
+        tools:layout="@layout/fragment_add_tasks" >
+        <action
+            android:id="@+id/action_addTasksFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTasksFragment"
+        android:name="com.example.todoapplication.fragments.EditTasksFragment"
+        android:label="fragment_edit_tasks"
+        tools:layout="@layout/fragment_edit_tasks" >
+        <action
+            android:id="@+id/action_editTasksFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+    </fragment>
+</navigation>
